@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NASDANQ — The CEO of the Meme Exchange</title>
+<meta name="description" content="A gnome walked into the Nasdaq and never left. $NASDANQ trades against the Nasdaq itself (QQQx) on StonkFun. Ring the bell.">
+<meta property="og:title" content="NASDANQ — The CEO of the Meme Exchange">
+<meta property="og:description" content="The only exchange where the CEO is a gnome and the board is Doge, Pepe, a screaming cat and a green bull. Paired with the Nasdaq itself.">
+<meta property="og:image" content="/assets/hero-desktop.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050b14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="/assets/hero-desktop.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar" id="top">
+  <a class="brand" href="#top" aria-label="NASDANQ home">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M8 34 L8 6 L16 6 L16 24 L24 6 L32 6 L32 34 L24 34 L24 16 L16 34 Z" fill="currentColor"/>
+    </svg>
+    <span class="brand-word">Nasdanq</span>
+  </a>
+  <nav class="nav">
+    <a href="#bell">The Bell</a>
+    <a href="#lore">Press Release</a>
+    <a href="#board">Board</a>
+    <a href="#listing">How to Buy</a>
+  </nav>
+  <a class="btn btn-green btn-sm" href="https://www.stonkfun.xyz/token/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">Trade $NASDANQ</a>
+</header>
+
+<!-- ============ HERO (16:9 full bleed) ============ -->
+<section class="hero">
+  <picture class="hero-pic">
+    <!-- Swap these two sources for the mobile / tablet artwork when ready:
+         mobile  → /assets/hero-mobile.jpg   (max-width: 767px)
+         tablet  → /assets/hero-tablet.jpg   (768px – 1099px) -->
+    <source media="(max-width: 767px)" srcset="/assets/hero-desktop.jpg">
+    <source media="(max-width: 1099px)" srcset="/assets/hero-desktop.jpg">
+    <img src="/assets/hero-desktop.jpg" alt="The gnome CEO of NASDANQ at the podium, flanked by Doge, Pepe, a screaming cat and a giant green bull" fetchpriority="high">
+  </picture>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <a class="hero-scroll" href="#tape" aria-label="Scroll down">
+    <span>MARKET OPEN</span>
+    <i></i>
+  </a>
+</section>
+
+<!-- ============ TICKER TAPE ============ -->
+<div class="tape" id="tape" aria-hidden="true">
+  <div class="tape-track" id="tapeTrack"></div>
+</div>
+
+<!-- ============ CA BAR ============ -->
+<section class="cabar">
+  <div class="cabar-inner">
+    <div class="cabar-label">
+      <span class="dot"></span>
+      <span>SOLANA · PAIRED WITH QQQx</span>
+    </div>
+    <button class="ca" id="caBtn" type="button" title="Copy contract address">
+      <span class="ca-key">CA</span>
+      <span class="ca-val" id="caVal">9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK</span>
+      <span class="ca-copy" id="caCopy">COPY</span>
+    </button>
+    <div class="cabar-actions">
+      <a class="btn btn-green" href="https://www.stonkfun.xyz/token/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">Buy on StonkFun</a>
+      <a class="btn btn-ghost" href="https://dexscreener.com/solana/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">Chart</a>
+      <a class="btn btn-ghost" href="https://x.com/allhaildonkey/status/2098441013291323604" target="_blank" rel="noopener">𝕏</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HEADLINE ============ -->
+<section class="headline">
+  <p class="eyebrow">NEW YORK, NY — TIMES SQUARE</p>
+  <h1>A gnome walked into<br>the Nasdaq. <em>He never left.</em></h1>
+  <p class="lede">Nobody knows how he got the badge. Nobody knows who signed the paperwork. But every morning at 9:30 the little green hat climbs the podium, points at the screen, and the candles turn green. <strong>$NASDANQ</strong> is the coin of the exchange he now runs — and it trades against the Nasdaq itself.</p>
+  <div class="stats" id="stats">
+    <div class="stat"><span class="stat-k">PAIR</span><span class="stat-v">NASDANQ / QQQx</span></div>
+    <div class="stat"><span class="stat-k">SUPPLY</span><span class="stat-v">1,000,000,000</span></div>
+    <div class="stat"><span class="stat-k">MARKET CAP</span><span class="stat-v" id="statMc">—</span></div>
+    <div class="stat"><span class="stat-k">QQQx PRICE</span><span class="stat-v" id="statQqq">—</span></div>
+  </div>
+</section>
+
+<!-- ============ THE BELL ============ -->
+<section class="bell" id="bell">
+  <div class="bell-inner">
+    <div class="bell-copy">
+      <p class="eyebrow">09:30:00 EST</p>
+      <h2>Ring the<br>Opening Bell</h2>
+      <p>Every real exchange has one. Ours is rung by a gnome. Press it. Feel the green.</p>
+      <div class="bell-count"><span id="bellCount">0</span> bells rung from this terminal</div>
+    </div>
+    <button class="bell-btn" id="bellBtn" type="button" aria-label="Ring the opening bell">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="bellGold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe98a"/>
+            <stop offset=".55" stop-color="#e2b23c"/>
+            <stop offset="1" stop-color="#8a5f0c"/>
+          </linearGradient>
+        </defs>
+        <g class="bell-body">
+          <rect x="55" y="8" width="10" height="10" rx="2" fill="url(#bellGold)"/>
+          <path d="M60 16 C40 16 32 32 32 52 L32 76 L20 90 L100 90 L88 76 L88 52 C88 32 80 16 60 16 Z" fill="url(#bellGold)" stroke="#5a3d08" stroke-width="2"/>
+          <path d="M40 40 C40 30 48 24 56 22" fill="none" stroke="#fff6c8" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+        </g>
+        <circle class="bell-clapper" cx="60" cy="98" r="9" fill="url(#bellGold)" stroke="#5a3d08" stroke-width="2"/>
+      </svg>
+      <span class="bell-ring" aria-hidden="true"></span>
+      <span class="bell-ring bell-ring-2" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="bell-flash" id="bellFlash" aria-hidden="true"></div>
+</section>
+
+<!-- ============ LORE / PRESS RELEASE ============ -->
+<section class="lore" id="lore">
+  <article class="press">
+    <header class="press-head">
+      <span class="press-tag">FOR IMMEDIATE RELEASE</span>
+      <span class="press-date">Times Square · Market Open</span>
+    </header>
+    <h2>NASDANQ Names New Chief Executive; Board Reportedly “Very Bullish”</h2>
+    <p><strong>NEW YORK</strong> — The NASDANQ Meme Exchange today confirmed the appointment of a small green-hatted gnome as Chief Executive Officer, effective immediately. The executive, who has not provided a name, a résumé, or a last name, was found already standing at the podium when staff arrived.</p>
+    <p>“He pointed at the board and everything went green,” said one floor trader, who asked not to be identified because he was crying. “We just kind of… let him keep doing it.”</p>
+    <p>The gnome’s first act as CEO was to list <strong>$NASDANQ</strong>, the exchange’s own coin, directly against the Nasdaq-100 via <strong>QQQx</strong>. Analysts note this makes it the only memecoin in history whose chart is denominated in the index it is parodying.</p>
+    <p>Asked for comment on macro conditions, the CEO pointed upward and said nothing. Markets rallied.</p>
+    <footer class="press-foot">
+      <span>Not affiliated with Nasdaq, Inc. He is affiliated with nothing. He is a gnome.</span>
+    </footer>
+  </article>
+</section>
+
+<!-- ============ BOARD ============ -->
+<section class="board" id="board">
+  <p class="eyebrow center">LEADERSHIP</p>
+  <h2 class="center">Board of Directors</h2>
+  <div class="board-grid">
+    <div class="member member-gnome">
+      <div class="member-pic" style="--x:50%;--y:42%;--z:210%"></div>
+      <div class="member-meta">
+        <span class="member-role">CHIEF EXECUTIVE OFFICER</span>
+        <span class="member-name">The Gnome</span>
+        <span class="member-bio">Points at things. Things go up. Does not blink.</span>
+      </div>
+    </div>
+    <div class="member">
+      <div class="member-pic" style="--x:12%;--y:52%;--z:300%"></div>
+      <div class="member-meta">
+        <span class="member-role">CHIEF WOW OFFICER</span>
+        <span class="member-name">Doge</span>
+        <span class="member-bio">Much liquidity. Very listing. Wow.</span>
+      </div>
+    </div>
+    <div class="member">
+      <div class="member-pic" style="--x:27%;--y:60%;--z:380%"></div>
+      <div class="member-meta">
+        <span class="member-role">HEAD OF INVESTOR RELATIONS</span>
+        <span class="member-name">Pepe</span>
+        <span class="member-bio">Wears the suit. Feels the feels. Handles the calls.</span>
+      </div>
+    </div>
+    <div class="member">
+      <div class="member-pic" style="--x:66%;--y:58%;--z:420%"></div>
+      <div class="member-meta">
+        <span class="member-role">CHIEF SCREAMING OFFICER</span>
+        <span class="member-name">The Cat</span>
+        <span class="member-bio">Announces every green candle. Loudly. Also the red ones.</span>
+      </div>
+    </div>
+    <div class="member">
+      <div class="member-pic" style="--x:86%;--y:44%;--z:230%"></div>
+      <div class="member-meta">
+        <span class="member-role">CHIEF GREEN OFFICER</span>
+        <span class="member-name">The Bull</span>
+        <span class="member-bio">Made of pure candle. Has never seen a red day. Refuses to.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO BUY ============ -->
+<section class="listing" id="listing">
+  <div class="listing-inner">
+    <div class="listing-copy">
+      <p class="eyebrow">LISTING REQUIREMENTS</p>
+      <h2>How to get<br>on the floor</h2>
+      <p>$NASDANQ lives on StonkFun, the launchpad where memecoins trade against tokenized stocks. You buy it with QQQx — the Nasdaq-100 on Solana — or let the router swap from SOL for you.</p>
+      <a class="btn btn-green" href="https://www.stonkfun.xyz/token/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">Open StonkFun</a>
+    </div>
+    <ol class="steps">
+      <li><span class="step-n">01</span><div><strong>Get a Solana wallet.</strong> Phantom or Solflare. Fund it with a little SOL.</div></li>
+      <li><span class="step-n">02</span><div><strong>Open the $NASDANQ page on StonkFun.</strong> Connect your wallet. Check the CA matches the one above.</div></li>
+      <li><span class="step-n">03</span><div><strong>Pick an amount and buy.</strong> The router swaps SOL → QQQx → NASDANQ in one click.</div></li>
+      <li><span class="step-n">04</span><div><strong>Ring the bell.</strong> You are now a shareholder of an exchange run by a gnome. Congratulations.</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 34 L8 6 L16 6 L16 24 L24 6 L32 6 L32 34 L24 34 L24 16 L16 34 Z" fill="currentColor"/></svg>
+      <span>Nasdanq</span>
+    </div>
+    <p class="foot-ca">CA · <span id="footCa">9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK</span></p>
+    <p class="foot-disc">$NASDANQ is a memecoin with no intrinsic value, no roadmap and a gnome for a CEO. Not affiliated with Nasdaq, Inc., Backed Finance or any actual exchange. Nothing here is financial advice. Do not put in money you can’t afford to lose to a gnome.</p>
+    <div class="foot-links">
+      <a href="https://www.stonkfun.xyz/token/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">StonkFun</a>
+      <a href="https://dexscreener.com/solana/9WRSxYeMzHBguGYG57KPzARcWepM7TeQCPLfVLxgSTNK" target="_blank" rel="noopener">Dexscreener</a>
+      <a href="https://x.com/allhaildonkey/status/2098441013291323604" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">CA copied to clipboard</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
